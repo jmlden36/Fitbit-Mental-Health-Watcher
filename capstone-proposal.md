@@ -10,9 +10,12 @@ What tools, frameworks, libraries, APIs, modules and/or other resources (whateve
 
 -Fitbit Software Development Toolkit
 -Fitbit sensor API
+-Fitbit web API
+-OAuth 2.0 Authorization Framework
 -React
 -CSS
 -HTML
+
 
 If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
 

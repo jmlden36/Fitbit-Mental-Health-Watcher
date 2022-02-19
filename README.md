@@ -11,3 +11,6 @@ My capstone project for Epicodus.  An application using the Fitbit smart watch t
 #### Saturday, 02/19/2022
 
 *6:30am-8am: spent 1.5 hours setting up a Fitbit developer account, setting up a Fitbit studio account, and exploring Fitbit.  I used Fitbit studio and the [getting started page](https://dev.fitbit.com/getting-started/#get-ready-) to create a test clock face that successfully connected to my watch.
+
+*8am-9:15am: spent 1.25 hours using the fitbit studio documentationfitbit studio to create a watch app and export  as well as a test project build with npx-fitbit in VS Code for testing. 
+
