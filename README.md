@@ -16,4 +16,6 @@ My capstone project for Epicodus.  An application using the Fitbit smart watch t
 
 *9:15am-9:45am: watch 2 part video series on accessing the fitbit web API via postman
 
-*9:45am-11:15am: practice creating an authorization token for my fitbit and exploring endpoints for my profile data all in postman
+*9:45am-11:15am: practice creating an authorization token for my fitbit and exploring endpoints for my profile data in postman
+
+*11:15am-12pm: start reading the Fitbit Web API Developer Guide
