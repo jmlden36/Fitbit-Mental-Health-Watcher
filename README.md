@@ -14,8 +14,10 @@ My capstone project for Epicodus.  An application using the Fitbit smart watch t
 
 *8am-9:15am: spent 1.25 hours using the fitbit studio documentation and  fitbit studio to create a watch app and export as well as a test project build with npx-fitbit in VS Code for testing.
 
-*9:15am-9:45am: watch 2 part video series on accessing the fitbit web API via postman
+*9:15am-9:45am: spent .5 hours watching 2 part video series on accessing the fitbit web API via postman
 
-*9:45am-11:15am: practice creating an authorization token for my fitbit and exploring endpoints for my profile data in postman
+*9:45am-11:15am: spent 1.5 hours practicing creating an authorization token for my fitbit and exploring endpoints for my profile data in postman
 
-*11:15am-12pm: start reading the Fitbit Web API Developer Guide
+*11:15am-12pm: spent .75 hours start reading the Fitbit Web API Developer Guide
+
+*1pm-3pm: spent 2 hours continuing to read the Fitbit development documentation
