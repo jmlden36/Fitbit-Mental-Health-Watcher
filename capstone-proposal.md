@@ -2,15 +2,16 @@ Name of Student:  Matt Luker
 
 Name of Project:  Fitbit Mental Health Watcher
 
-Project's Purpose or Goal: It will allow a user to record Fitbit sensor data for a desired amount of time to observe their physical state while they are experiencing a panic attack or other potentially harmful mental states.  This data could allow someone to better understand the physical warning signs that could lead to the unwanted mental state or some data to send to their doctor or mental healthcare practitioner.  The goal is to make it very easy for a user to record this data.
+Project's Purpose or Goal: It will allow a user to record Fitbit sensor data for a desired amount of time to observe their physical state while they are experiencing a panic attack or other potentially harmful mental states.  This data could allow someone to better understand the physical warning signs that could lead to the unwanted mental state or some data to send to their doctor or mental healthcare practitioner.  The goal is to make it very easy for a user to record this data and they will be able to store their data in a firebase database.
 
-List the absolute minimum features the project requires to meet this purpose or goal: A user can connect their compatible Fitbit smart watch to the application via Bluetooth.  A user can see their watches sensor data on the app.  A user can save a snippet of their sensor data.
+List the absolute minimum features the project requires to meet this purpose or goal: A user can create an account with email and password and only that user will be authorized to view their data.  A user can connect their compatible Fitbit smart watch to the application via Bluetooth.  A user can see their watches sensor data on the app.  A user can save a snippet of their sensor data in a firebase database for future viewing.
 
 What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
 
 -Fitbit Software Development Toolkit
 -Fitbit sensor API
 -Fitbit web API
+-Firebase
 -OAuth 2.0 Authorization Framework
 -React
 -CSS

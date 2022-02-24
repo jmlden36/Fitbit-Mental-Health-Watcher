@@ -21,3 +21,7 @@ My capstone project for Epicodus.  An application using the Fitbit smart watch t
 *11:15am-12pm: spent .75 hours start reading the Fitbit Web API Developer Guide
 
 *1pm-3pm: spent 2 hours continuing to read the Fitbit development documentation
+
+#### Thursday, 02/24/2022
+
+*11:15-11:30: spent .25 hours during a coding break to update my capstone proposal and resubmit
