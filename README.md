@@ -31,3 +31,5 @@ _____________________________________________________
 * 7:30am-8am: spent .5 hours setting up a trello account and creating a trello board to organize my project goals and make a timeline
 
 * 9:45am-10:15am: spent .5 hours watching tutorial on how to do fitbit api requests with javascript
+
+* 9:45am-12pm: spent 1.25 hours following a tutorial creating a test React project to make API calls
