@@ -32,4 +32,6 @@ _____________________________________________________
 
 * 9:45am-10:15am: spent .5 hours watching tutorial on how to do fitbit api requests with javascript
 
-* 9:45am-12pm: spent 1.25 hours following a tutorial creating a test React project to make API calls
+* 9:45am-12pm: spent 1.25 hours following a tutorial creating a test React project to make API calls [test project](https://github.com/jmlden36/react-with-api)
+
+* 1:30pm-3:30pm: spent 2 hours finishing the React with api practice project [test project](https://github.com/jmlden36/react-with-api)
