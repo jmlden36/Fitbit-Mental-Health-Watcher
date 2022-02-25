@@ -25,3 +25,7 @@ My capstone project for Epicodus.  An application using the Fitbit smart watch t
 #### Thursday, 02/24/2022
 
 *11:15-11:30: spent .25 hours during a coding break to update my capstone proposal and resubmit
+
+#### Friday, 02/25/2022
+
+*7:30am-8am: spent .5 hours setting up a trello account and creating a trello board to organize my project goals and make a timeline
