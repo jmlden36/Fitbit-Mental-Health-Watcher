@@ -37,7 +37,8 @@ class Headlines extends React.Component {
   
   render() {
     const { error, isLoaded, watchInfo } = this.state;
-    let first = watchInfo['activities-heart-intraday'];
+    let first = watchInfo['activities-heart-intraday'].dataset[0].time;
+    console.log(first);
     if (error) {
       return <React.Fragment>Error: {error.message}</React.Fragment>;
     } else if (!isLoaded) {
@@ -46,8 +47,10 @@ class Headlines extends React.Component {
       return (
         <React.Fragment>
           <h1>WatchInfo</h1>
+          <input name="start-time" type="time" placeholder='Start' required autoFocus></input>
+          <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required autoFocus></input>
           <ul>
-                <h3>{first.dataset[0].time} + {first.dataset[0].value}</h3>
+                <h3>hi</h3>
               
           </ul>
         </React.Fragment>
