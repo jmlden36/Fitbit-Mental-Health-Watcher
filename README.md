@@ -35,3 +35,8 @@ _____________________________________________________
 * 9:45am-12pm: spent 1.25 hours following a tutorial creating a test React project to make API calls [test project](https://github.com/jmlden36/react-with-api)
 
 * 1:30pm-3:30pm: spent 2 hours finishing the React with api practice project [test project](https://github.com/jmlden36/react-with-api)
+
+______________________________________________________
+#### Saturday, 02/26/2022
+
+* 10:30am-11:15am: spent .75 hours talking with my sister(psychologist) about what information would be useful and how it would be best displayed if someone wanted to show their mental healthcare professional
