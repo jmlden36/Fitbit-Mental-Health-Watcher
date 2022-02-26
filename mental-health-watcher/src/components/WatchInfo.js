@@ -34,10 +34,24 @@ class Headlines extends React.Component {
   componentDidMount() {
     this.makeApiCall()
   }
+
+  
+
+  
   
   render() {
+    function noColon(string) {
+      let nCStr = string.replace(":", "");
+      return nCStr;
+    }
+
+    function timeRange(objArr) {
+      let filteredObjArr = objArr.filter(e => parseInt(noColon(e.time)) >= 5 && parseInt(noColon(e.time)) <=7);
+      return filteredObjArr;
+    }
     const { error, isLoaded, watchInfo } = this.state;
-    console.log(watchInfo['activities-heart-intraday'].dataset)
+    const objectArray = watchInfo['activities-heart-intraday']['dataset'];
+    console.log(watchInfo['activities-heart-intraday'])
     let first = watchInfo['activities-heart-intraday'];
     console.log(first);
     if (error) {
@@ -64,3 +78,16 @@ class Headlines extends React.Component {
 }
 
 export default Headlines;
+
+
+
+// let info = response['activities-heart-intraday']['dataset'];
+// let infoTime = info[0].time;
+// function noColon(string) {
+//   let nCStr = string.replace(":", "");
+//   return nCStr;
+// }
+// function timeRange(objArr) {
+//   let filteredObjArr = objArr.filter(e => parseInt(noColon(e.time)) >= 5 && parseInt(noColon(e.time)) <=7);
+//   return filteredObjArr;
+// }
