@@ -6,7 +6,7 @@ class Headlines extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      watchInfo: {}
+      watchInfo: []
     };
   }
   makeApiCall = () => {
@@ -37,7 +37,8 @@ class Headlines extends React.Component {
   
   render() {
     const { error, isLoaded, watchInfo } = this.state;
-    let first = watchInfo['activities-heart-intraday'].dataset[0].time;
+    console.log(watchInfo['activities-heart-intraday'].dataset)
+    let first = watchInfo['activities-heart-intraday'];
     console.log(first);
     if (error) {
       return <React.Fragment>Error: {error.message}</React.Fragment>;
@@ -49,10 +50,13 @@ class Headlines extends React.Component {
           <h1>WatchInfo</h1>
           <input name="start-time" type="time" placeholder='Start' required autoFocus></input>
           <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required autoFocus></input>
-          <ul>
-                <h3>hi</h3>
+          
+          <h3>{first.dataset[0].time} + {first.dataset[0].value}</h3>
+          {/* <ul>
+                <p>{first.dataset[0].filter((time => parseInt(time[4]) >= 5 && parseInt(time[4]) <= 10))}</p>  
+                
               
-          </ul>
+          </ul> */}
         </React.Fragment>
       );
     }
