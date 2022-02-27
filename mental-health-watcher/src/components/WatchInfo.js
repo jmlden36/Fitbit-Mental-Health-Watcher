@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Headlines extends React.Component {
+class WatchInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,10 +17,10 @@ class Headlines extends React.Component {
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          console.log(jsonifiedResponse)
+          console.log(jsonifiedResponse['activities-heart-intraday'].dataset)
           this.setState({
             isLoaded: true,
-            watchInfo: jsonifiedResponse
+            watchInfo: jsonifiedResponse['activities-heart-intraday'].dataset
           });
         })
         .catch((error) => {
@@ -40,20 +40,20 @@ class Headlines extends React.Component {
   
   
   render() {
-    function noColon(string) {
-      let nCStr = string.replace(":", "");
-      return nCStr;
-    }
 
     function timeRange(objArr) {
-      let filteredObjArr = objArr.filter(e => parseInt(noColon(e.time)) >= 5 && parseInt(noColon(e.time)) <=7);
+      let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= 5 && parseInt(e.time.replace(":", "")) <=7);
       return filteredObjArr;
     }
     const { error, isLoaded, watchInfo } = this.state;
-    const objectArray = watchInfo['activities-heart-intraday']['dataset'];
-    console.log(watchInfo['activities-heart-intraday'])
-    let first = watchInfo['activities-heart-intraday'];
-    console.log(first);
+    // let selectedRates = watchInfo.filter(e => parseInt((e.time.replace(":", ""))) >= 5 && parseInt((e.time.replace(":", ""))) <=7)
+    let selectedRates = timeRange(watchInfo);
+    console.log(watchInfo)
+    console.log(selectedRates)
+    // const objectArray = watchInfo['activities-heart-intraday'];
+    // console.log(watchInfo['activities-heart-intraday'])
+    // let first = watchInfo['activities-heart-intraday'];
+    // console.log(first);
     if (error) {
       return <React.Fragment>Error: {error.message}</React.Fragment>;
     } else if (!isLoaded) {
@@ -64,8 +64,15 @@ class Headlines extends React.Component {
           <h1>WatchInfo</h1>
           <input name="start-time" type="time" placeholder='Start' required autoFocus></input>
           <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required autoFocus></input>
+          <ul>
+            {selectedRates.map((element, index) => 
+              <li key={index}>
+                <h3>{element.time}</h3>
+                <h3>{element.value}</h3>
+              </li>
+            )}
+          </ul>
           
-          <h3>{first.dataset[0].time} + {first.dataset[0].value}</h3>
           {/* <ul>
                 <p>{first.dataset[0].filter((time => parseInt(time[4]) >= 5 && parseInt(time[4]) <= 10))}</p>  
                 
@@ -77,7 +84,7 @@ class Headlines extends React.Component {
   }
 }
 
-export default Headlines;
+export default WatchInfo;
 
 
 
