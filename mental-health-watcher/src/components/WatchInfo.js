@@ -10,7 +10,7 @@ class WatchInfo extends React.Component {
     };
   }
   makeApiCall = () => {
-    fetch(`https://api.fitbit.com/1/user/-/activities/heart/date/2022-02-24/2022-02-24.json`, {
+    fetch(`https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json`, {
       method: "GET",
       headers: {"authorization": `${process.env.REACT_APP_API_KEY}`}
     })
@@ -45,15 +45,13 @@ class WatchInfo extends React.Component {
       let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= 5 && parseInt(e.time.replace(":", "")) <=7);
       return filteredObjArr;
     }
+
     const { error, isLoaded, watchInfo } = this.state;
-    // let selectedRates = watchInfo.filter(e => parseInt((e.time.replace(":", ""))) >= 5 && parseInt((e.time.replace(":", ""))) <=7)
+
     let selectedRates = timeRange(watchInfo);
-    console.log(watchInfo)
-    console.log(selectedRates)
-    // const objectArray = watchInfo['activities-heart-intraday'];
-    // console.log(watchInfo['activities-heart-intraday'])
-    // let first = watchInfo['activities-heart-intraday'];
-    // console.log(first);
+    console.log(watchInfo);
+    console.log(selectedRates);
+
     if (error) {
       return <React.Fragment>Error: {error.message}</React.Fragment>;
     } else if (!isLoaded) {
@@ -62,9 +60,12 @@ class WatchInfo extends React.Component {
       return (
         <React.Fragment>
           <h1>WatchInfo</h1>
-          <input name="start-time" type="time" placeholder='Start' required autoFocus></input>
-          <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required autoFocus></input>
-          <ul>
+          <form name='timeRange'>
+            <input name="start-time" type="time" placeholder='Start' required autoFocus></input>
+            <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required autoFocus></input>
+            <button type='submit'>submit</button>
+          </form>
+                    <ul>
             {selectedRates.map((element, index) => 
               <li key={index}>
                 <h3>{element.time}</h3>
@@ -72,12 +73,6 @@ class WatchInfo extends React.Component {
               </li>
             )}
           </ul>
-          
-          {/* <ul>
-                <p>{first.dataset[0].filter((time => parseInt(time[4]) >= 5 && parseInt(time[4]) <= 10))}</p>  
-                
-              
-          </ul> */}
         </React.Fragment>
       );
     }
@@ -85,16 +80,3 @@ class WatchInfo extends React.Component {
 }
 
 export default WatchInfo;
-
-
-
-// let info = response['activities-heart-intraday']['dataset'];
-// let infoTime = info[0].time;
-// function noColon(string) {
-//   let nCStr = string.replace(":", "");
-//   return nCStr;
-// }
-// function timeRange(objArr) {
-//   let filteredObjArr = objArr.filter(e => parseInt(noColon(e.time)) >= 5 && parseInt(noColon(e.time)) <=7);
-//   return filteredObjArr;
-// }
