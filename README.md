@@ -26,7 +26,7 @@ _____________________________________________________
 
 * 11:15-11:30: spent .25 hours during a coding break to update my capstone proposal and resubmit
 _____________________________________________________
-#### Friday, 02/25/2022
+#### Friday, 02/25/2022 total 4.25
 
 * 7:30am-8am: spent .5 hours setting up a trello account and creating a trello board to organize my project goals and make a timeline
 
@@ -37,6 +37,12 @@ _____________________________________________________
 * 1:30pm-3:30pm: spent 2 hours finishing the React with api practice project [test project](https://github.com/jmlden36/react-with-api)
 
 ______________________________________________________
-#### Saturday, 02/26/2022
+#### Saturday, 02/26/2022 .25, .75, .75, .75 @2.5
 
 * 10:30am-11:15am: spent .75 hours talking with my sister(psychologist) about what information would be useful and how it would be best displayed if someone wanted to show their mental healthcare professional
+
+#### Sunday, 02/27/2022 .5 .75 @1.25
+
+* 2:45am-3:15am: spent .5 hours working on code shown in commit log @3:20am
+
+* 3:15am-4am: spent .75 hours working on getting dynamic time ranges using dropdown time inputs

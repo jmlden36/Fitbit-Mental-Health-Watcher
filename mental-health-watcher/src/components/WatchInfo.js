@@ -72,6 +72,7 @@ class WatchInfo extends React.Component {
                 <h3>{element.value}</h3>
               </li>
             )}
+            
           </ul>
         </React.Fragment>
       );
