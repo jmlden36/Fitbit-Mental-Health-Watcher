@@ -7,6 +7,7 @@ function Event(props){
       <div onClick = {() => props.whenEventClicked(props.id)}>
         <h3>Start time: {props.startTime}</h3>
         <h3>Stop time: {props.stopTime}</h3>
+        <h3>Data: {props.data}</h3>
       </div>
       <hr />
   </React.Fragment>

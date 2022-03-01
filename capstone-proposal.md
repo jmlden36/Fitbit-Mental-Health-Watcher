@@ -12,6 +12,8 @@ What tools, frameworks, libraries, APIs, modules and/or other resources (whateve
 -Fitbit sensor API
 -Fitbit web API
 -Firebase
+-Firebase Authentication
+-Firebase Authorization
 -OAuth 2.0 Authorization Framework
 -React
 -CSS
