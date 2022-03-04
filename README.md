@@ -40,9 +40,13 @@ ______________________________________________________
 #### Saturday, 02/26/2022 .25, .75, .75, .75 @2.5
 
 * 10:30am-11:15am: spent .75 hours talking with my sister(psychologist) about what information would be useful and how it would be best displayed if someone wanted to show their mental healthcare professional
-
+_______________________________________________________
 #### Sunday, 02/27/2022 .5 .75 @1.25
 
 * 2:45am-3:15am: spent .5 hours working on code shown in commit log @3:20am
 
 * 3:15am-4am: spent .75 hours working on getting dynamic time ranges using dropdown time inputs
+________________________________________________________
+#### Friday, 03/4/2022 
+
+* 6:15am - 6:45am: spent .5 hours updating my trello board for this weekends work sessions
