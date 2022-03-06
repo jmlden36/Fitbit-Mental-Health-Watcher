@@ -7,12 +7,14 @@ function EventDetail(props) {
   console.log(watchArr);
   console.log(event.startTime)
   console.log(event.stopTime)
+  
   function timeRange(objArr, stTime, stpTime) {
       let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt(stTime.toString().replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt(stpTime.toString().replace(":", "")));
       return filteredObjArr;
     }
 
-    let selectedRates = timeRange(watchArr, event.startTime.toString(), event.stopTime.toString());
+    let selectedRates = timeRange(watchArr, event.startTime+":00", event.stopTime+":00");
+    console.log(event.startTime+":00")
     console.log(selectedRates)
 
 
