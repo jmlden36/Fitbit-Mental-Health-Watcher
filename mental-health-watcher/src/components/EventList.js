@@ -6,7 +6,7 @@ function EventList(props){
   return (
     <React.Fragment>
       <hr/>
-      {props.eventList.map((event) =>
+      {Object.values(props.eventList).map((event) =>
         <Event
           whenEventClicked = { props.onEventSelection }
           startTime={event.startTime}
@@ -20,7 +20,7 @@ function EventList(props){
 }
 
 EventList.propTypes = {
-  eventList: PropTypes.array,
+  eventList: PropTypes.object,
   onEventSelection: PropTypes.func
 };
 
