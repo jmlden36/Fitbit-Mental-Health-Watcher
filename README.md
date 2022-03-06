@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <small>Initiated February 11th, 2022.</small>
+  <small>Initiated February 18th, 2022.</small>
 </p>
 
 <!-- Project Links -->
