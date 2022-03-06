@@ -42,7 +42,7 @@ class WatchInfo extends React.Component {
   render() {
 
     function timeRange(objArr) {
-      let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= 5 && parseInt(e.time.replace(":", "")) <=7);
+      let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt("02:54:29".replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt("05:54:29".replace(":", "")));
       return filteredObjArr;
     }
 
@@ -60,11 +60,11 @@ class WatchInfo extends React.Component {
       return (
         <React.Fragment>
           <h1>WatchInfo</h1>
-          <form name='timeRange'>
+          {/* <form name='timeRange'>
             <input name="start-time" type="time" placeholder='Start' required autoFocus></input>
             <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required autoFocus></input>
             <button type='submit'>submit</button>
-          </form>
+          </form> */}
                     <ul>
             {selectedRates.map((element, index) => 
               <li key={index}>
