@@ -4,6 +4,7 @@ import EventDetail from './EventDetails';
 import EventList from './EventList';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import * as a from './../actions';
 
 class WatchInfo extends React.Component {
   constructor(props) {
@@ -50,27 +51,16 @@ class WatchInfo extends React.Component {
       });
     } else {
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = a.toggleForm();
       dispatch(action);
     }
   }
 
   handleAddingNewEventToList = (newEvent) => {
     const { dispatch } = this.props;
-    const { id, startTime, stopTime, notes } = newEvent;
-    const action = {
-      type: 'ADD_EVENT',
-      id: id,
-      startTime: startTime,
-      stopTime: stopTime,
-      notes: notes,
-    }
+    const action = a.addEvent(newEvent)
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
