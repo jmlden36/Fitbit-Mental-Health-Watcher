@@ -60,11 +60,10 @@ class WatchInfo extends React.Component {
       return (
         <React.Fragment>
           <h1>WatchInfo</h1>
-          {/* <form name='timeRange'>
-            <input name="start-time" type="time" placeholder='Start' required autoFocus></input>
-            <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required autoFocus></input>
-            <button type='submit'>submit</button>
-          </form> */}
+            <h2>{Date()}</h2>
+            <input id="startT" name="start-time" type="time" placeholder='Start' required autoFocus></input>
+            <input name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required></input>
+            
                     <ul>
             {selectedRates.map((element, index) => 
               <li key={index}>
