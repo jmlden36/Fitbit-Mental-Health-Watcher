@@ -1,32 +1,25 @@
 import React from "react";
+import { v4 } from 'uuid';
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
-import { useFirestore } from 'react-redux-firebase';
 
-function NewTicketForm(props){
-  const firestore = useFirestore();
-  function addEventToFirestore(event) {
+function NewEventForm(props){
+
+  function handleNewEventFormSubmission(event) {
     event.preventDefault();
-    props.onNewEventCreation();
-    return firestore.collection('events').add(
-      {
-        startTime: event.target.startTime.value,
-        stopTime: event.target.stopTime.value, 
-        notes: event.target.notes.value
-      }
-    );
+    props.onNewEventCreation({startTime: event.target.startTime.value, stopTime: event.target.stopTime.value, notes: event.target.notes.value, id: v4()});
   }
 
   return (
     <React.Fragment>
       <ReusableForm 
-        formSubmissionHandler={addEventToFirestore}
-        buttonText="Help!" />
+        formSubmissionHandler={handleNewEventFormSubmission}
+        buttonText="Make new Event" />
     </React.Fragment>
   );
 }
 
-NewTicketForm.propTypes = {
+NewEventForm.propTypes = {
   onNewEventCreation: PropTypes.func
 };
 

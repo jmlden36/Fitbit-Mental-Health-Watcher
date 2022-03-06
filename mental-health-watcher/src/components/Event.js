@@ -5,12 +5,11 @@ function Event(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenEventClicked(props.id)}>
-        <h3>Start time: {props.startTime}</h3>
-        <h3>Stop time: {props.stopTime}</h3>
-        <h3>Data: {props.data}</h3>
+        <h3>{props.startTime} - {props.stopTime}</h3>
+        <p><em>{props.notes}</em></p>
       </div>
-      <hr />
-  </React.Fragment>
+      <hr/>
+    </React.Fragment>
   );
 }
 
@@ -18,7 +17,6 @@ Event.propTypes = {
   startTime: PropTypes.string,
   stopTime: PropTypes.string,
   notes: PropTypes.string,
-  data: PropTypes.string,
   id: PropTypes.string,
   whenEventClicked: PropTypes.func
 };

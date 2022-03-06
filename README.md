@@ -220,3 +220,94 @@ ________________________________________________________
 #### Sunday, 03/6/2022
 
 * 3am-3:45am: spent .75 hours re-obtaining fitbit authorization token because I accidentally let me original token lapse
+
+
+
+
+
+
+THIS IS WORKING CODE FOR CALLING THE DATA I WANT
+
+import React from 'react';
+
+class WatchInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      watchInfo: []
+    };
+  }
+  makeApiCall = () => {
+    fetch(`https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json`, {
+      method: "GET",
+      headers: {"authorization": `${process.env.REACT_APP_API_KEY}`}
+    })
+      .then(response => response.json())
+      .then(
+        (jsonifiedResponse) => {
+          console.log(jsonifiedResponse['activities-heart-intraday'].dataset)
+          this.setState({
+            isLoaded: true,
+            watchInfo: jsonifiedResponse['activities-heart-intraday'].dataset
+          });
+        })
+        .catch((error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        });
+  }
+
+  componentDidMount() {
+    this.makeApiCall()
+  }
+
+  
+
+  
+  
+  render() {
+  let stTime = $('#start-time').val();
+  let stpTime = $('#stop-time').val();
+    function timeRange(objArr, startTime, stopTime) {
+      let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt(startTime.replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt(stopTime.replace(":", "")));
+      return filteredObjArr;
+    }
+
+    const { error, isLoaded, watchInfo } = this.state;
+
+    let selectedRates = timeRange(watchInfo, stTime, stpTime);
+    console.log(watchInfo);
+    console.log(selectedRates);
+    
+    if (error) {
+      return <React.Fragment>Error: {error.message}</React.Fragment>;
+    } else if (!isLoaded) {
+      return <React.Fragment>Loading...</React.Fragment>;
+    } else {
+      return (
+        <React.Fragment>
+          <h1>WatchInfo</h1>
+            <h2>{Date()}</h2>
+            <input id="start-time" name="start-time" type="time" placeholder='Start' required autoFocus></input>
+            <input id="stop-time" name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required></input>
+            
+                    <ul>
+            {selectedRates.map((element, index) => 
+              <li key={index}>
+                <h3>{element.time}</h3>
+                <h3>{element.value}</h3>
+              </li>
+            )}
+            
+          </ul>
+        </React.Fragment>
+      );
+    }
+  }
+}
+
+export default WatchInfo;
