@@ -2,13 +2,14 @@ import React from 'react';
 import NewEventForm from './NewEventForm';
 import EventDetail from './EventDetails';
 import EventList from './EventList';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 class WatchInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainEventList: [],
       selectedEvent: null,
       error: null,
       isLoaded: false,
@@ -57,15 +58,21 @@ class WatchInfo extends React.Component {
   }
 
   handleAddingNewEventToList = (newEvent) => {
-    const newMainEventList = this.state.mainEventList.concat(newEvent);
-    this.setState({
-      mainEventList: newMainEventList,
-      formVisibleOnPage: false
-    });
+    const { dispatch } = this.props;
+    const { id, startTime, stopTime, notes } = newEvent;
+    const action = {
+      type: 'ADD_EVENT',
+      id: id,
+      startTime: startTime,
+      stopTime: stopTime,
+      notes: notes,
+    }
+    dispatch(action);
+    this.setState({formVisibleOnPage: false});
   }
 
   handleChangingSelectedEvent = (id) => {
-    const selectedEvent = this.state.mainEventList.filter(event => event.id === id)[0];
+    const selectedEvent = this.props.mainEventList[id];
     this.setState({selectedEvent: selectedEvent});
   }
   
@@ -82,7 +89,7 @@ class WatchInfo extends React.Component {
       currentlyVisibleState = <NewEventForm onNewEventCreation={this.handleAddingNewEventToList} />;
       buttonText = "Return to Event List";
     } else {
-      currentlyVisibleState = <EventList eventList={this.state.mainEventList} onEventSelection={this.handleChangingSelectedEvent} />;
+      currentlyVisibleState = <EventList eventList={this.props.mainEventList} onEventSelection={this.handleChangingSelectedEvent} />;
       buttonText = "Add Event";
     }
     return (
@@ -131,5 +138,16 @@ class WatchInfo extends React.Component {
 //     }
 //   }
 // }
+WatchInfo.propTypes = {
+  mainEventList: PropTypes.object
+}
+
+const mapStateToProps = state => {
+  return {
+    mainEventList: state
+  }
+}
+
+WatchInfo = connect(mapStateToProps)(WatchInfo);
 
 export default WatchInfo;
