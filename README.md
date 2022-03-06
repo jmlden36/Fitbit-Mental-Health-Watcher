@@ -37,11 +37,11 @@ _____________________________________________________
 * 1:30pm-3:30pm: spent 2 hours finishing the React with api practice project [test project](https://github.com/jmlden36/react-with-api)
 
 ______________________________________________________
-#### Saturday, 02/26/2022 .25, .75, .75, .75 @2.5
+#### Saturday, 02/26/2022 
 
 * 10:30am-11:15am: spent .75 hours talking with my sister(psychologist) about what information would be useful and how it would be best displayed if someone wanted to show their mental healthcare professional
 _______________________________________________________
-#### Sunday, 02/27/2022 .5 .75 @1.25
+#### Sunday, 02/27/2022 
 
 * 2:45am-3:15am: spent .5 hours working on code shown in commit log @3:20am
 
@@ -50,3 +50,7 @@ ________________________________________________________
 #### Friday, 03/4/2022 
 
 * 6:15am - 6:45am: spent .5 hours updating my trello board for this weekends work sessions
+________________________________________________________
+#### Sunday, 03/6/2022
+
+* 3am-3:45am: spent .75 hours re-obtaining fitbit authorization token because I accidentally let me original token lapse
