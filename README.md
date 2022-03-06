@@ -129,6 +129,9 @@ ___________________________
   ```
   6) You now have access to the heartrate data from your Fitbit smartwatch!
   
+  #### Create a firebase database for your data
+  1) add directions for firebase config info and variables to add to .env
+  
   #### Launch the application
   1) Make sure you have the project open in your code editor and have navigated to the project directory in your terminal
   2) In your terminal while in the project directory use the command ```npm install```
