@@ -75,6 +75,7 @@ class WatchInfo extends React.Component {
     if (this.state.selectedEvent != null) {
       currentlyVisibleState = 
       <EventDetail 
+        watchArr = {this.state.watchInfo}
         event = {this.state.selectedEvent} />
       buttonText = "Return to Event List";
     } else if (this.state.formVisibleOnPage) {

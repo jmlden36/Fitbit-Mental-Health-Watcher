@@ -7,10 +7,10 @@ function ReusableForm(props) {
       <form onSubmit={props.formSubmissionHandler}>
         <input
           type='time'
-          name='start-time' required />
+          name='startTime' required />
         <input
           type='time'
-          name='stop-time' required />
+          name='stopTime' required />
         <textarea
           name='notes'
           placeholder='Tell me about this event?.' />
