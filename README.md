@@ -59,11 +59,11 @@ ___________________________
 ## About the Project
 
 ### Fitbit Mental Health Watcher Description
-Tap Room is an application designed for a tap room to allow a user to create, read, update and delete kegs from the tap room keg list.  A user can also sell pints from a keg and see when it is empty and see the kegs details.  
+Mental Health Watcher is a React application that allows a user to connect to their Fitbit smart watch and record specific time ranges of heartrate data to save for future viewing.  
 
 ## Component Diagram
 <a>
-        <img src="src/img/component-diagram.png" alt= "component diagram">
+        <img src="src/img/Capstone Diagram.jpg">
     </a>
 
 
@@ -100,18 +100,18 @@ ___________________________
 
   #### Cloning
 
-  1) Navigate to the [tap-room repository here](https://github.com/jmlden36/tap-room).
+  1) Navigate to the [Mental Health Watcher repository here](https://github.com/jmlden36/Fitbit-Mental-Health-Watcher/tree/main).
   2) Click 'Clone or download' to reveal the HTTPS url ending with .git and the 'Download ZIP' option.
   3) Open up your system Terminal or GitBash, navigate to your desktop with the command: `cd Desktop`, or whichever location suits you best.
   4) Clone the repository to your desktop: `$ git clone https://github.com/jmlden36/tap-room`
-  5) Run the command `cd tap-room` to enter into the project directory.
+  5) Run the command `cd Fitbit-Mental-Health-Watcher` to enter into the project directory.
   6) View or Edit:
       * Code Editor - Run the command `code .` to open the project in VisualStudio Code for review and editing.
       * Text Editor - Open by double clicking on any of the files to open in a text editor.
 
   #### Download
 
-  1) Navigate to the [tap-room repository here](https://github.com/jmlden36/tap-room).
+  1) Navigate to the [Mental Health Watcher repository here](https://github.com/jmlden36/Fitbit-Mental-Health-Watcher/tree/main).
   2) Click 'Clone or download' to reveal the HTTPS url ending with .git and the 'Download ZIP' option.
   3) Click 'Download ZIP' and unextract.
   4) Open by double clicking on any of the files to open in a text editor.
@@ -120,6 +120,14 @@ ___________________________
   1) Make sure you have the project open in your code editor and have navigated to the project directory in your terminal
   2) In your terminal while in the project directory use the command `npm install`
   3) Next use the command npm run start to launch the application in your browser
+
+  #### Obtaining Fitbit Developer Authorization Token
+  1) Make sure you have a Fitbit versa 3 or Sense smartwatch and that you have a fitbit account.  When you have an account navigate to the [fitbit developer page](https://dev.fitbit.com/getting-started/) to create a developer account.  
+  2) Make sure you are logged in to dev.fitbit.com and click the manage tab and then select Register An App.  Fill out all of the appropriate fields.  None of the URL's have to be actual websites but they must be filled in.  The Redirect URL must be `http://localhost`.  Default access can be set to Read & Write.  Click the save button and some information will be generated for you such as ClientID and Client Secret.
+  3) At the bottom of the page that holds your ClientId click on the OAuth 2.0 tutorial page link.  Choose implicit grant flow and use the values from the previous page to fill in the relevant data into the pages form.  Choose heartrate as a selected scope and choose 604800 as the token expiration time.  This will give you an 8 day access token that can be refreshed as needed.  When all of the required fields are filled out their will be a authorization URL that is generated.  Click that authorization URL and you will be redirected to a user authorization page.  Click allow all data and then click the allow button.  You will be redirected to a blank webpage that holds your authorization URL after the # symbol in the pages URL.  Copy and paste that part of the URL into the provided text field and you will get a long access token.
+  4) You will now have an access token!
+  5) Create a .env file in the projects root directory.  In the .env use your new authorization token to enter code that looks like this `REACT_APP_API_KEY=Bearer AuthOrIzationKeyHere`
+  6) You now have access to the heartrate data from your Fitbit smartwatch!
 
   #### Using the application
   A user can click the `add keg` button to be directed to a form for creating a new keg and adding it to the keg list.  You can click on `view details` for each keg in the keg list to be directed to the kegs details.  While in the details page you can update or delete the selected keg.  When you click the `Sell Pint` button you will decrease the amount of pints left in the keg by 1 until you are completely sold out.  A user receives a warning message when a keg gets below 10 pints left.
