@@ -131,7 +131,7 @@ ___________________________
   
   #### Create a firebase database for your data
   1) add directions for firebase config info and variables to add to .env
-  
+
   #### Launch the application
   1) Make sure you have the project open in your code editor and have navigated to the project directory in your terminal
   2) In your terminal while in the project directory use the command ```npm install```
@@ -228,3 +228,8 @@ ________________________________________________________
 * 3am-3:45am: spent .75 hours re-obtaining fitbit authorization token because I accidentally let me original token lapse
 
 * 3pm-3:15pm: spent .25 hours updating trello board with progress and plans for the remainder of my work days left
+
+________________________________________________________
+#### Tuesday, 03/8/2022
+
+* 1:15pm - 1:45pm: spent .5 hours reading D3.js documentation and tutorials
