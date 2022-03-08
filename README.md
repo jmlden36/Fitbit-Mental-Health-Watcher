@@ -233,3 +233,5 @@ ________________________________________________________
 #### Tuesday, 03/8/2022
 
 * 1:15pm - 1:45pm: spent .5 hours reading D3.js documentation and tutorials
+
+* 1:45pm - 3:30pm: spent 1.75 hours working through a youtube tutorial on data visualization with D3.js

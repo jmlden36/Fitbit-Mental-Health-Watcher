@@ -32,7 +32,6 @@ function Signin() {
   }
   return (
     <React.Fragment>
-      if 
       <h1>Sign up;</h1>
       <form onSubmit={doSignUp}>
         <input
