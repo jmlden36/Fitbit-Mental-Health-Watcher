@@ -5,7 +5,7 @@ import EventList from './EventList';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
-import { withFirestore } from 'react-redux-firebase'
+import { withFirestore, isLoaded } from 'react-redux-firebase'
 
 class WatchInfo extends React.Component {
   constructor(props) {
@@ -76,29 +76,46 @@ class WatchInfo extends React.Component {
   }
   
   render() {
-    let currentlyVisibleState = null;
-    let buttonText = null;
-    if (this.state.selectedEvent != null) {
-      currentlyVisibleState = 
-      <EventDetail 
-        watchArr = {this.state.watchInfo}
-        event = {this.state.selectedEvent} />
-      buttonText = "Return to Event List";
-    } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = <NewEventForm onNewEventCreation={this.handleAddingNewEventToList} />;
-      buttonText = "Return to Event List";
-    } else {
-      currentlyVisibleState = <EventList eventList={this.props.mainEventList} onEventSelection={this.handleChangingSelectedEvent} />;
-      buttonText = "Add Event";
+    const auth = this.props.firebase.auth();
+    
+    if (!isLoaded(auth)) {
+      return (
+        <React.Fragment>
+          <h1>Loading...</h1>
+        </React.Fragment>
+      )
     }
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-      </React.Fragment>
-    );
+    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      return (
+        <React.Fragment>
+          <h1>You must be signed in to access your data.</h1>
+        </React.Fragment>
+      )
+    } 
+      if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      let currentlyVisibleState = null;
+      let buttonText = null;
+      if (this.state.selectedEvent != null) {
+        currentlyVisibleState = 
+        <EventDetail 
+          watchArr = {this.state.watchInfo}
+          event = {this.state.selectedEvent} />
+        buttonText = "Return to Event List";
+      } else if (this.props.formVisibleOnPage) {
+        currentlyVisibleState = <NewEventForm onNewEventCreation={this.handleAddingNewEventToList} />;
+        buttonText = "Return to Event List";
+      } else {
+        currentlyVisibleState = <EventList eventList={this.props.mainEventList} onEventSelection={this.handleChangingSelectedEvent} />;
+        buttonText = "Add Event";
+      }
+      return (
+        <React.Fragment>
+          {currentlyVisibleState}
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </React.Fragment>
+      );
+    }
   }
-
 }
     // function timeRange(objArr, startTime, stopTime) {
     //   let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt(startTime.replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt(stopTime.replace(":", "")));
