@@ -5,6 +5,7 @@ import EventList from './EventList';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
+import { withFirestore } from 'react-redux-firebase'
 
 class WatchInfo extends React.Component {
   constructor(props) {
@@ -63,8 +64,15 @@ class WatchInfo extends React.Component {
   }
 
   handleChangingSelectedEvent = (id) => {
-    const selectedEvent = this.props.mainEventList[id];
-    this.setState({selectedEvent: selectedEvent});
+    this.props.firestore.get({collection: 'events', doc: id}).then((event) => {
+      const firestoreEvent = {
+        startTime: event.get("startTime"),
+        stopTime: event.get("stopTime"),
+        notes: event.get("notes"),
+        id: event.id
+      }
+      this.setState({selectedEvent: firestoreEvent });
+    });
   }
   
   render() {
@@ -143,4 +151,4 @@ const mapStateToProps = state => {
 
 WatchInfo = connect(mapStateToProps)(WatchInfo);
 
-export default WatchInfo;
+export default withFirestore(WatchInfo);
