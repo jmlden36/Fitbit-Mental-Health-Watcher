@@ -1,12 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-
-function Header() {
+function Header(){
   return (
     <React.Fragment>
-      <div className="header">
-        <h1 className="text-info">Mental Health Watcher</h1>
-      </div>
+      <h1>Mental Health Watcher</h1>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/signin">Sign In</Link>
+        </li>
+      </ul>
     </React.Fragment>
   );
 }
