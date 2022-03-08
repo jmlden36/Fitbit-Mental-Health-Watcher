@@ -1,19 +1,30 @@
 import React from "react";
-import { v4 } from 'uuid';
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
+import { useFirestore } from 'react-redux-firebase';
+
 
 function NewEventForm(props){
-
-  function handleNewEventFormSubmission(event) {
+  
+  const firestore = useFirestore();
+  function addEventToFirestore(event) {
     event.preventDefault();
-    props.onNewEventCreation({startTime: event.target.startTime.value, stopTime: event.target.stopTime.value, notes: event.target.notes.value, id: v4()});
+    props.onNewEventCreation();
+    
+    return firestore.collection('events').add(
+      {
+        startTime: event.target.startTime.value,
+        stopTime: event.target.stopTime.value,
+        notes: event.target.notes.value,
+        //possibly add a date property to make the api call specific to a day and time instead of just today and time.  Need this for future viewing
+      }
+    );
   }
 
   return (
     <React.Fragment>
       <ReusableForm 
-        formSubmissionHandler={handleNewEventFormSubmission}
+        formSubmissionHandler={addEventToFirestore}
         buttonText="Make new Event" />
     </React.Fragment>
   );

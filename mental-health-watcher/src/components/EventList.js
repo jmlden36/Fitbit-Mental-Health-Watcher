@@ -1,12 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Event from "./Event";
+import { useSelector } from 'react-redux';
+import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 
 function EventList(props){
-  return (
-    <React.Fragment>
+  useFirestoreConnect([
+    { collection: 'events' }
+  ]);
+
+  const events = useSelector(state => state.firestore.ordered.events);
+
+  if (isLoaded(events)) {
+    return (
+      <React.Fragment>
       <hr/>
-      {Object.values(props.eventList).map((event) =>
+      {events.map((event) =>
         <Event
           whenEventClicked = { props.onEventSelection }
           startTime={event.startTime}
@@ -17,10 +26,17 @@ function EventList(props){
       )}
     </React.Fragment>
   );
+} else {
+    return (
+      <React.Fragment>
+        <h3>Loading...</h3>
+      </React.Fragment>
+    )
+  }
 }
+    
 
 EventList.propTypes = {
-  eventList: PropTypes.object,
   onEventSelection: PropTypes.func
 };
 

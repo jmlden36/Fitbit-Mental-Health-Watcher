@@ -58,10 +58,8 @@ class WatchInfo extends React.Component {
 
   handleAddingNewEventToList = (newEvent) => {
     const { dispatch } = this.props;
-    const action = a.addEvent(newEvent)
+    const action = a.toggleForm();
     dispatch(action);
-    const action2 = a.toggleForm();
-    dispatch(action2);
   }
 
   handleChangingSelectedEvent = (id) => {
