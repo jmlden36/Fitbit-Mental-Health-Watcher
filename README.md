@@ -130,7 +130,31 @@ ___________________________
   6) You now have access to the heartrate data from your Fitbit smartwatch!
   
   #### Create a firebase database for your data
-  1) add directions for firebase config info and variables to add to .env
+  1) Navigate to [Firebase](https://firebase.google.com/).
+  2) Click on *Get Started*. This will take us to a sign in page where can log into a Google account (or create one if needed).
+  3) After creating an account you will be redirected to the Firebase console where you will click *Create A Project*.
+  4) Name your project *mental-health-watcher* and click Continue.  Weather or not to use Google Analytics is your choice.
+  5) Click on *Firestore Database in the lefthand Build pane.
+  6) When redirected click the *Create database* button and a popup will appear.
+  7) Choose test or production mode according to your security concerns and click *Next*.
+  8) Click on *Project Overview in the lefthand pane and the click the button with this *</>* symbol on it to add firebase to the application.  You will be redirected to another page where you will add an app nickname. Use the same name you used above and click Register app.  There is an option for hosting which is up to you.
+  9) You will be given a script with your firebaseConfig variable that looks like this ```var firebaseConfig = {
+    apiKey: "YOUR-UNIQUE-CREDENTIALS",
+    authDomain: "YOUR-PROJECT-NAME.firebaseapp.com",
+    databaseURL: "https://YOUR-PROJECT-NAME.firebaseio.com",
+    projectId: "YOUR-UNIQUE-PROJECT-NAME",
+    storageBucket: "YOUR-UNIQUE-URL",
+    messagingSenderId: "YOUR-UNIQUE-CREDENTIALS",
+    appId: "YOUR-UNIQUE-APPID"
+  };```
+  note that all of the values of the key-value pairs have been replaced with placeholders.  Copy and paste this variable somewhere for future use. If you need to access the firebaseConfig later, you can click on the gear icon next to *Project Overview* in the top left corner.
+  10) Now enter this ```REACT_APP_FIREBASE_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
+REACT_APP_FIREBASE_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
+REACT_APP_FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-NAME.firebaseio.com"
+REACT_APP_FIREBASE_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
+REACT_APP_FIREBASE_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
+REACT_APP_FIREBASE_APP_ID = "YOUR-PROJECT-APP-ID"``` into your .env file and replace the placeholders with the values from the firebaseConfig variable you copy and pasted. Here is an example for the API_KEY ```REACT_APP_FIREBASE_API_KEY = e343KJLKLHk33lk4hlssierhi2``` note this is not a real key.  
 
   #### Launch the application
   1) Make sure you have the project open in your code editor and have navigated to the project directory in your terminal
