@@ -58,8 +58,8 @@ function Signin() {
           placeholder="Password" />
         <button type="submit">Sign In</button>
       </form>
-      <h1>Sign Out</h1>
-      <button onClick={doSignOut}>Sign out</button>
+      {/* <h1>Sign Out</h1>
+      <button onClick={doSignOut}>Sign out</button> */}
     </React.Fragment>
   )
 }

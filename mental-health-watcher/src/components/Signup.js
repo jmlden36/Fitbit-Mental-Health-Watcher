@@ -16,7 +16,7 @@ function Signup() {
 
   return (
     <React.Fragment>
-      <h1>Sign up;</h1>
+      <h1>Sign up</h1>
       <form onSubmit={doSignUp}>
         <input
           type="text"
