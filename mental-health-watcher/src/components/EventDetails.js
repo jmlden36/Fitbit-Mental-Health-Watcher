@@ -9,10 +9,10 @@ function EventDetail(props) {
   const { event, watchArr} = props;
   const [heartData, setHeartData] = useState([]);
   const [heartDataLoading, setHeartDataLoading] = useState(true);
-
+  
   const fetchDateTimeData = async () => {
     const resp = await fetch(`https://api.fitbit.com/1/user/-/activities/heart/date/2022-03-08/1d/1min.json`, {
-    method: "GET",
+      method: "GET",
       headers: {"authorization": `${process.env.REACT_APP_API_KEY}`}
     })
     const data = await resp.json();
@@ -23,7 +23,7 @@ function EventDetail(props) {
     
   };
   console.log(heartData);
-
+  
   useEffect(() => {
     fetchDateTimeData();
   }, [])
@@ -48,11 +48,10 @@ function EventDetail(props) {
     // const valArr = watchArr.map(e => e.value)
     // console.log(valArr)
 
-    const data = useState(valArr)
+    const data = useState(valArr);
     const svgRef = useRef();
 
     useEffect(() => {
-      fetchDateTimeData();
       
       //make api call
     //   const fetchDateTimeData = async () => {
