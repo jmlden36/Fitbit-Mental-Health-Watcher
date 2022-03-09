@@ -121,7 +121,11 @@ ___________________________
   
   1) Make sure you have a Fitbit versa 3 or Sense smartwatch and that you have a fitbit account.  When you have an account navigate to the [fitbit developer page](https://dev.fitbit.com/getting-started/) to create a developer account.  
   2) Make sure you are logged in to dev.fitbit.com and click the manage tab and then select Register An App.  Fill out all of the appropriate fields.  None of the URL's have to be actual websites but they must be filled in.  The Redirect URL must be ``http://localhost``.  Default access can be set to Read & Write.  Click the save button and some information will be generated for you such as ClientID and Client Secret.
-  3) At the bottom of the page that holds your ClientId click on the OAuth 2.0 tutorial page link.  Choose implicit grant flow and use the values from the previous page to fill in the relevant data into the pages form.  Choose heartrate as a selected scope and choose 604800 as the token expiration time.  This will give you an 8 day access token that can be refreshed as needed.  When all of the required fields are filled out their will be a authorization URL that is generated.  Click that authorization URL and you will be redirected to a user authorization page.  Click allow all data and then click the allow button.  You will be redirected to a blank webpage that holds your authorization URL after the # symbol in the pages URL.  Copy and paste that part of the URL into the provided text field and you will get a long access token.
+  3) At the bottom of the page that holds your ClientId click on the OAuth 2.0 tutorial page link.  
+  4) Choose implicit grant flow and use the values from the previous page to fill in the relevant data into the pages form.  
+  5) Choose heartrate as a selected scope and choose 604800 as the token expiration time.  This will give you an 8 day access token that can be refreshed as needed.  When all of the required fields are filled out their will be an authorization URL that is generated.  
+  6) Click the authorization URL and you will be redirected to a user authorization page.  
+  7) Click allow all data and then click the allow button.  You will be redirected to a blank webpage that holds your authorization URL after the # symbol in the pages URL.  Copy and paste that part of the URL into the provided text field and you will get a long access token.
   4) You will now have an access token!
   5) Create a .env file in the projects root directory.  In the .env use your new authorization token to enter code that looks like this 
   ```
@@ -138,7 +142,9 @@ ___________________________
   6) When redirected click the *Create database* button and a popup will appear.
   7) Choose test or production mode according to your security concerns and click *Next*.
   8) Click on *Project Overview in the lefthand pane and the click the button with this *</>* symbol on it to add firebase to the application.  You will be redirected to another page where you will add an app nickname. Use the same name you used above and click Register app.  There is an option for hosting which is up to you.
-  9) You will be given a script with your firebaseConfig variable that looks like this ```var firebaseConfig = {
+  9) You will be given a script with your firebaseConfig variable that looks like this 
+  ```
+  var firebaseConfig = {
     apiKey: "YOUR-UNIQUE-CREDENTIALS",
     authDomain: "YOUR-PROJECT-NAME.firebaseapp.com",
     databaseURL: "https://YOUR-PROJECT-NAME.firebaseio.com",
@@ -146,15 +152,24 @@ ___________________________
     storageBucket: "YOUR-UNIQUE-URL",
     messagingSenderId: "YOUR-UNIQUE-CREDENTIALS",
     appId: "YOUR-UNIQUE-APPID"
-  };```
+  };
+  ```
   note that all of the values of the key-value pairs have been replaced with placeholders.  Copy and paste this variable somewhere for future use. If you need to access the firebaseConfig later, you can click on the gear icon next to *Project Overview* in the top left corner.
-  10) Now enter this ```REACT_APP_FIREBASE_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
-REACT_APP_FIREBASE_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
-REACT_APP_FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-NAME.firebaseio.com"
-REACT_APP_FIREBASE_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
-REACT_APP_FIREBASE_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
-REACT_APP_FIREBASE_APP_ID = "YOUR-PROJECT-APP-ID"``` into your .env file and replace the placeholders with the values from the firebaseConfig variable you copy and pasted. Here is an example for the API_KEY ```REACT_APP_FIREBASE_API_KEY = e343KJLKLHk33lk4hlssierhi2``` note this is not a real key.  
+  10) Now enter this 
+  ```
+  REACT_APP_FIREBASE_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
+  REACT_APP_FIREBASE_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
+  REACT_APP_FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-NAME.firebaseio.com"
+  REACT_APP_FIREBASE_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
+  REACT_APP_FIREBASE_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
+  REACT_APP_FIREBASE_APP_ID = "YOUR-PROJECT-APP-ID"
+  ``` 
+  into your .env file and replace the placeholders with the values from the firebaseConfig variable you copy and pasted. Here is an example for the API_KEY 
+  ```
+  REACT_APP_FIREBASE_API_KEY = e343KJLKLHk33lk4hlssierhi2
+  ``` 
+  note this is not a real key.  
 
   #### Launch the application
   1) Make sure you have the project open in your code editor and have navigated to the project directory in your terminal
