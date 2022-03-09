@@ -78,7 +78,9 @@ function EventDetail(props) {
       <div className="detail">
         <h1>Event Detail</h1>
       </div>
-      
+      <div className="date">
+      <h3>{event.date}</h3>
+      </div>
       <div className="event">
       <h3>From: {event.startTime} To: {event.stopTime}</h3>
       </div>
@@ -107,9 +109,7 @@ function EventDetail(props) {
       <hr/>
     </React.Fragment>
   );
-}        
-
-    
+}  
 
 EventDetail.propTypes = {
   event: PropTypes.object,

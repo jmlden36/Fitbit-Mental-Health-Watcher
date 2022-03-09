@@ -5,6 +5,7 @@ function Event(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenEventClicked(props.id)}>
+        <h3><em>{props.date}</em></h3>
         <h3>{props.startTime} - {props.stopTime}</h3>
         <p><em>{props.notes}</em></p>
       </div>
@@ -14,6 +15,7 @@ function Event(props){
 }
 
 Event.propTypes = {
+  date: PropTypes.string,
   startTime: PropTypes.string,
   stopTime: PropTypes.string,
   notes: PropTypes.string,

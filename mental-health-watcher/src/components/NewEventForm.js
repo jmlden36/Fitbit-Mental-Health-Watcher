@@ -13,6 +13,7 @@ function NewEventForm(props){
     
     return firestore.collection('events').add(
       {
+        date: event.target.date.value,
         startTime: event.target.startTime.value,
         stopTime: event.target.stopTime.value,
         notes: event.target.notes.value,

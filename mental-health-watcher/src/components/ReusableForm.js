@@ -6,11 +6,17 @@ function ReusableForm(props) {
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
         <input
-          type='time'
-          name='startTime' required />
+          type='date'
+          name='date' 
+          required />
         <input
           type='time'
-          name='stopTime' required />
+          name='startTime' 
+          required />
+        <input
+          type='time'
+          name='stopTime' 
+          required />
         <textarea
           name='notes'
           placeholder='Tell me about this event?.' />

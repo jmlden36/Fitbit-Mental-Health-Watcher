@@ -66,6 +66,7 @@ class WatchInfo extends React.Component {
   handleChangingSelectedEvent = (id) => {
     this.props.firestore.get({collection: 'events', doc: id}).then((event) => {
       const firestoreEvent = {
+        date: event.get("date"),
         startTime: event.get("startTime"),
         stopTime: event.get("stopTime"),
         notes: event.get("notes"),
