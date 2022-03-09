@@ -26,7 +26,6 @@ class WatchInfo extends React.Component {
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          console.log(jsonifiedResponse['activities-heart-intraday'].dataset)
           this.setState({
             isLoaded: true,
             watchInfo: jsonifiedResponse['activities-heart-intraday'].dataset

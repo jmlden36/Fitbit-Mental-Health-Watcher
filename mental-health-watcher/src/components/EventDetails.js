@@ -30,7 +30,7 @@ function EventDetail(props) {
       return filteredObjArr;
     }
 
-    let selectedRates = timeRange(heartData, event.startTime+":00", event.stopTime+":00");
+    let selectedRates = timeRange(watchArr, event.startTime+":00", event.stopTime+":00");
     console.log(selectedRates)
 
     //variables for the line chart
@@ -50,6 +50,32 @@ function EventDetail(props) {
     const svgRef = useRef();
 
     useEffect(() => {
+      fetchDateTimeData();
+      
+      //make api call
+    //   const fetchDateTimeData = async () => {
+    //     const resp = await fetch(`https://api.fitbit.com/1/user/-/activities/heart/date/2022-03-08/1d/1min.json`, {
+    //     method: "GET",
+    //       headers: {"authorization": `${process.env.REACT_APP_API_KEY}`}
+    //     })
+    //     const data = await resp.json();
+    //     console.log(data['activities-heart-intraday'].dataset);
+    //     setHeartData(data['activities-heart-intraday'].dataset)
+    //     console.log(heartData)
+    //     setHeartDataLoading(false)
+        
+    //   };
+    //   const result = fetchDateTimeData()
+    //   .catch(console.error);
+
+    //   let selectedRates2 = timeRange(data, event.startTime+":00", event.stopTime+":00");
+    // console.log(selectedRates2)
+
+    //   let valArr2 = selectedRates.map(function(e) {
+    //     return e["value"];
+    //   });
+      // console.log(valArr2)
+      
       // setting up svg
       const w = 1200;
       const h = 200;
