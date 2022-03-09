@@ -74,7 +74,11 @@ class WatchInfo extends React.Component {
       this.setState({selectedEvent: firestoreEvent });
     });
   }
-  
+  handleDeletingMemory = (id) => {
+    this.props.firestore.delete({collection: 'events', doc: id});
+    this.setState({selectedEvent: null});
+  }
+
   render() {
     const auth = this.props.firebase.auth();
     
@@ -99,7 +103,8 @@ class WatchInfo extends React.Component {
         currentlyVisibleState = 
         <EventDetail 
           watchArr = {this.state.watchInfo}
-          event = {this.state.selectedEvent} />
+          event = {this.state.selectedEvent} 
+          onClickingDelete = {this.handleDeletingMemory}/>
         buttonText = "Return to Event List";
       } else if (this.props.formVisibleOnPage) {
         currentlyVisibleState = <NewEventForm onNewEventCreation={this.handleAddingNewEventToList} />;

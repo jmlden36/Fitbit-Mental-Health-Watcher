@@ -4,7 +4,7 @@ import WatchInfo from "./WatchInfo";
 import * as d3 from 'd3';
 
 function EventDetail(props) {
-  const { event, watchArr} = props;
+  const { event, watchArr, onClickingDelete } = props;
   console.log(watchArr);
   console.log(event.startTime)
   console.log(event.stopTime)
@@ -74,6 +74,7 @@ function EventDetail(props) {
     }, [data]);
   return (
     <React.Fragment>
+      <button onClick={() => onClickingDelete(event.id) }>Delete Event</button>
       <div className="detail">
         <h1>Event Detail</h1>
       </div>
@@ -111,6 +112,7 @@ function EventDetail(props) {
 
 EventDetail.propTypes = {
   event: PropTypes.object,
+  onClickingDelete: PropTypes.func
 };
 
 export default EventDetail;
