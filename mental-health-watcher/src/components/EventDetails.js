@@ -4,6 +4,19 @@ import WatchInfo from "./WatchInfo";
 import * as d3 from 'd3';
 function EventDetail(props) {
   const { event, watchArr} = props;
+  const fetchDateTimeData = async () => {
+    const resp = await fetch(`https://api.fitbit.com/1/user/-/activities/heart/date/2022-03-08/1d/1min.json`, {
+    method: "GET",
+      headers: {"authorization": `${process.env.REACT_APP_API_KEY}`}
+    })
+    const data = await resp.json();
+    console.log(resp);
+    console.log(data);
+  }
+
+  useEffect(() => {
+    fetchDateTimeData();
+  }, [])
   console.log(watchArr);
   console.log(event.startTime)
   console.log(event.stopTime)
@@ -35,7 +48,7 @@ function EventDetail(props) {
     useEffect(() => {
       // setting up svg
       const w = 1200;
-      const h = 100;
+      const h = 200;
       const svg = d3.select(svgRef.current)
         .attr('width', w)
         .attr('height', h)
