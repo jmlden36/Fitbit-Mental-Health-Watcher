@@ -115,7 +115,7 @@ class WatchInfo extends React.Component {
       }
       return (
         <React.Fragment>
-          <button onClick={this.handleClick}>{buttonText}</button>
+          <button className="buttons btn" onClick={this.handleClick}>{buttonText}</button>
           {currentlyVisibleState}
           
         </React.Fragment>

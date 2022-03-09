@@ -74,7 +74,7 @@ function EventDetail(props) {
     }, [data]);
   return (
     <React.Fragment>
-      <button onClick={() => onClickingDelete(event.id) }>Delete Event</button>
+      <button className="buttons" onClick={() => onClickingDelete(event.id) }>Delete Event</button>
       <div className="detail">
         <h1>Event Detail</h1>
       </div>
@@ -98,6 +98,7 @@ function EventDetail(props) {
                 <h3>Time: {element.time}</h3>
                 
                 <h3>Heart Rate in BPM {element.value}</h3>
+                <h3>____________________</h3>
                 </pre>
               </div>
             )}

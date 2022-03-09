@@ -43,10 +43,14 @@ h1 {
   border-style: solid;
   border-radius: 30%;
   padding: 20px;
+  text-decoration: none;
+}
+
+.links :hover {
+  background-color: rgb(214, 112, 192);
 }
 
 .data-points {
-  background-color: rgba(135, 93, 189, 0.335);
   display: flex;
   justify-content: center;
 }
@@ -67,3 +71,13 @@ h1 {
   font-family: cursive;
   font-weight: bold;
 }
+
+.buttons {
+  display: inline-block;
+  font-family: cursive;
+  color: aliceblue;
+  background-color: rgb(105, 61, 163);
+  border-radius: 100px;
+  cursor: pointer;
+}
+
