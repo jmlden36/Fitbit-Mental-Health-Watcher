@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import WatchInfo from "./WatchInfo";
 import * as d3 from 'd3';
+
+
+
 function EventDetail(props) {
   const { event, watchArr} = props;
   const [heartData, setHeartData] = useState([]);
@@ -19,7 +22,7 @@ function EventDetail(props) {
     setHeartDataLoading(false)
     
   };
-
+  console.log(heartData);
 
   useEffect(() => {
     fetchDateTimeData();
@@ -30,7 +33,7 @@ function EventDetail(props) {
       return filteredObjArr;
     }
 
-    let selectedRates = timeRange(watchArr, event.startTime+":00", event.stopTime+":00");
+    let selectedRates = timeRange(heartData, event.startTime+":00", event.stopTime+":00");
     console.log(selectedRates)
 
     //variables for the line chart
@@ -45,8 +48,7 @@ function EventDetail(props) {
     // const valArr = watchArr.map(e => e.value)
     // console.log(valArr)
 
-    const [data] = useState(valArr)
-    console.log(data)
+    const data = useState(valArr)
     const svgRef = useRef();
 
     useEffect(() => {
