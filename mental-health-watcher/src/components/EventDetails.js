@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import WatchInfo from "./WatchInfo";
 import * as d3 from 'd3';
+
 function EventDetail(props) {
   const { event, watchArr} = props;
   console.log(watchArr);
@@ -73,19 +74,31 @@ function EventDetail(props) {
     }, [data]);
   return (
     <React.Fragment>
-      <h1>Event Detail</h1>
-      <h3>{event.startTime} - {event.stopTime}</h3>
-      <p><em>{event.notes}</em></p>
+      <div className="detail">
+        <h1>Event Detail</h1>
+      </div>
+      
+      <div className="event">
+      <h3>From: {event.startTime} To: {event.stopTime}</h3>
+      </div>
+      <div className="notes">
+        <h3>{event.notes}</h3>
+      </div>
+      
+      
       <div className="lineChart">
         <svg ref={svgRef}></svg>
       </div>
       
       <ul>
-        {selectedRates.map((element, index) => 
-              <li key={index}>
-                <h3>{element.time}</h3>
-                <h3>{element.value}</h3>
-              </li>
+        {selectedRates.map((element) => 
+              <div className="data-points">
+                <pre>
+                <h3>Time: {element.time}</h3>
+                
+                <h3>Heart Rate in BPM {element.value}</h3>
+                </pre>
+              </div>
             )}
             
           </ul>
