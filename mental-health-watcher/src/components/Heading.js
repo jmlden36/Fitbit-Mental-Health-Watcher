@@ -9,8 +9,10 @@ function Header(){
       <div className="header">
         
         <Link to="/signin" className="links">Sign In</Link>
-        <h1>Mental Health Watcher</h1>
+        <Link to="/signup" className="links">Sign Up</Link>        
         <Link to="/" className="links">Home</Link>
+        <h1>Mental Health Watcher For Fitbit Versa3 smartwatch</h1>
+        <h3 className="versa"></h3>
       </div>
       
     </React.Fragment>

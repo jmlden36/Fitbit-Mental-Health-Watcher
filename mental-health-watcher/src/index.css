@@ -16,9 +16,8 @@ code {
 .header {
   display: flex;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: left;
   margin-bottom: 20px;
-  background-color: rgba(46, 91, 168, 0.048);
 }
 
 h1 {
@@ -112,5 +111,10 @@ button {
 
 .event-card-content {
   display: block;
+  justify-content: center;
+}
+
+.versa {
+  display: flex;
   justify-content: center;
 }
