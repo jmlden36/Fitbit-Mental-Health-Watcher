@@ -24,3 +24,8 @@ code {
 h1 {
   color:rgb(103, 118, 119);
 }
+
+.lineChart {
+  display: flex;
+  justify-content: center;
+}
