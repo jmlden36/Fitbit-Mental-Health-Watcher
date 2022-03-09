@@ -4,30 +4,33 @@ import WatchInfo from "./WatchInfo";
 import * as d3 from 'd3';
 function EventDetail(props) {
   const { event, watchArr} = props;
+  const [heartData, setHeartData] = useState([]);
+  const [heartDataLoading, setHeartDataLoading] = useState(true);
+
   const fetchDateTimeData = async () => {
     const resp = await fetch(`https://api.fitbit.com/1/user/-/activities/heart/date/2022-03-08/1d/1min.json`, {
     method: "GET",
       headers: {"authorization": `${process.env.REACT_APP_API_KEY}`}
     })
     const data = await resp.json();
-    console.log(resp);
-    console.log(data);
-  }
+    console.log(data['activities-heart-intraday'].dataset);
+    setHeartData(data['activities-heart-intraday'].dataset)
+    console.log(heartData)
+    setHeartDataLoading(false)
+    
+  };
+
 
   useEffect(() => {
     fetchDateTimeData();
   }, [])
-  console.log(watchArr);
-  console.log(event.startTime)
-  console.log(event.stopTime)
   
   function timeRange(objArr, stTime, stpTime) {
       let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt(stTime.toString().replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt(stpTime.toString().replace(":", "")));
       return filteredObjArr;
     }
 
-    let selectedRates = timeRange(watchArr, event.startTime+":00", event.stopTime+":00");
-    console.log(event.startTime+":00")
+    let selectedRates = timeRange(heartData, event.startTime+":00", event.stopTime+":00");
     console.log(selectedRates)
 
     //variables for the line chart
@@ -35,14 +38,15 @@ function EventDetail(props) {
     let valArr = selectedRates.map(function(e) {
       return e["value"];
     });
+    console.log(valArr)
     //x axis 
-    const timeArr = watchArr.map(e => e.time)
-    console.log(timeArr)
+    // const timeArr = watchArr.map(e => e.time)
     //y axis
     // const valArr = watchArr.map(e => e.value)
-    console.log(valArr)
+    // console.log(valArr)
 
     const [data] = useState(valArr)
+    console.log(data)
     const svgRef = useRef();
 
     useEffect(() => {
