@@ -19,7 +19,9 @@ function EventDetail(props) {
 
     //variables for the line chart
 
-    let valArr = selectedRates.value;
+    let valArr = selectedRates.map(function(e) {
+      return e["value"];
+    });
     //x axis 
     const timeArr = watchArr.map(e => e.time)
     console.log(timeArr)
@@ -32,7 +34,7 @@ function EventDetail(props) {
 
     useEffect(() => {
       // setting up svg
-      const w = 400;
+      const w = 1200;
       const h = 100;
       const svg = d3.select(svgRef.current)
         .attr('width', w)
