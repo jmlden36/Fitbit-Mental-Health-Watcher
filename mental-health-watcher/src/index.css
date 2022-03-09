@@ -22,32 +22,36 @@ code {
 }
 
 h1 {
+  text-shadow: 2px 3px 4px #000000;
   align-self: center;
   color:rgb(105, 61, 163);
 }
 
-.lineChart {
-  background-color: rgb(163, 127, 211);
-  border-radius: 100px;
-  padding: 30px;
-  border-style: solid;
-  border-width: 80%;
+h3 {
   display: flex;
   justify-content: center;
 }
 
+.lineChart {
+  background-color: rgba(163, 127, 211, 0.644);
+  border-radius: 100px;
+  padding: 50px;
+  border-style: solid;
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+}
+
 .links {
   background-color: rgb(105, 61, 163);
-  font-family: cursive;
+  font-family: sans-serif;
   color: aliceblue;
   border-style: solid;
   border-radius: 30%;
   padding: 20px;
   text-decoration: none;
-}
-
-.links :hover {
-  background-color: rgb(214, 112, 192);
+  max-width: fit-content;
+  text-shadow: 2px 3px 4px #000000;
 }
 
 .data-points {
@@ -68,13 +72,14 @@ h1 {
 .notes {
   display: flex;
   justify-content: center;
-  font-family: cursive;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
 .buttons {
+  text-shadow: 2px 2px 4px #000000;
   display: inline-block;
-  font-family: cursive;
+  font-family: sans-serif;
   color: aliceblue;
   background-color: rgb(105, 61, 163);
   border-radius: 100px;
@@ -83,5 +88,19 @@ h1 {
 
 .date {
   display: flex;
+  justify-content: center;
+}
+
+.event-card {
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-radius: 100px;
+  background-color: rgba(53, 41, 122, 0.39);
+  padding: 20px;
+}
+
+.event-card-content {
+  display: block;
   justify-content: center;
 }

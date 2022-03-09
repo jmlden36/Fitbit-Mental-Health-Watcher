@@ -18,6 +18,7 @@ function EventList(props){
       {events.map((event) =>
         <Event
           whenEventClicked = { props.onEventSelection }
+          date={event.date}
           startTime={event.startTime}
           stopTime={event.stopTime}
           notes={event.notes}

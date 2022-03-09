@@ -35,8 +35,8 @@ function EventDetail(props) {
 
     useEffect(() => {
       // setting up svg
-      const w = 1200;
-      const h = 100;
+      const w = 800;
+      const h = 200;
       const svg = d3.select(svgRef.current)
         .attr('width', w)
         .attr('height', h)

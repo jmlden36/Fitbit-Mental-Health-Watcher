@@ -4,11 +4,16 @@ import PropTypes from "prop-types";
 function Event(props){
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenEventClicked(props.id)}>
-        <h3><em>{props.date}</em></h3>
-        <h3>{props.startTime} - {props.stopTime}</h3>
-        <p><em>{props.notes}</em></p>
-      </div>
+      <div className="gettin-crazy">
+        <div className="event-card" onClick = {() => props.whenEventClicked(props.id)}>
+          <div className="event-card-content">
+            <h3>Date: {props.date}</h3>
+            <h3>Start: {props.startTime}  -  Stop: {props.stopTime}</h3>
+            <h3><em>Note</em></h3>
+            <h3><em>{props.notes}</em></h3>
+          </div>
+        </div>
+      </div>      
       <hr/>
     </React.Fragment>
   );
