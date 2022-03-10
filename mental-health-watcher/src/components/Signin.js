@@ -1,8 +1,13 @@
 import React from "react";
 import firebase from "firebase/compat/app";
 import 'firebase/compat/auth';
-
+import { useHistory } from 'react-router-dom'
 function Signin() {
+  let history = useHistory();
+  function doThing() {
+    history.push("/");
+  }
+  
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signinEmail.value;
@@ -26,7 +31,7 @@ function Signin() {
           type="password"
           name="signinPassword"
           placeholder="Password" />
-        <button type="submit">Sign In</button>
+        <button onClick={doThing} type="submit">Sign In</button>
       </form>
       <h3>If you don't have an account already please click the Sign Up button above</h3>
     </React.Fragment>
