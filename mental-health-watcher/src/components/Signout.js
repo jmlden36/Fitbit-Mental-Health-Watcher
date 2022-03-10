@@ -15,6 +15,7 @@ function Signout() {
     <React.Fragment>
       <h1>Sign Out</h1>
       <button onClick={doSignOut}>Sign out</button>
+      <h1>Until next time old friend...</h1>
     </React.Fragment>
   )
 }

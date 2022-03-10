@@ -93,6 +93,7 @@ class WatchInfo extends React.Component {
       return (
         <React.Fragment>
           <h1>You must be signed in to access your data.</h1>
+          <h1>Don't have an account?  Click on Sign up to create a new account</h1>
         </React.Fragment>
       )
     } 
