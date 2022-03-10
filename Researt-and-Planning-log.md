@@ -63,3 +63,7 @@ ________________________________________________________
 * 1:15pm - 1:45pm: spent .5 hours reading D3.js documentation and tutorials
 
 * 1:45pm - 3:30pm: spent 1.75 hours working through a youtube tutorial on data visualization with D3.js
+
+#### Thursday, 03/10/2022
+
+* 4:30am-5:30am: spent 1 hour researching and trying to redirect the user to the homepage after sign in
