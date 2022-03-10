@@ -25,8 +25,7 @@ class WatchInfo extends React.Component {
     })
       .then(response => response.json())
       .then(
-        (jsonifiedResponse) => {
-          console.log(jsonifiedResponse['activities-heart-intraday'].dataset)
+        (jsonifiedResponse) => {    
           this.setState({
             isLoaded: true,
             watchInfo: jsonifiedResponse['activities-heart-intraday'].dataset
@@ -124,43 +123,7 @@ class WatchInfo extends React.Component {
     }
   }
 }
-    // function timeRange(objArr, startTime, stopTime) {
-    //   let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt(startTime.replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt(stopTime.replace(":", "")));
-    //   return filteredObjArr;
-    // }
 
-//     const { error, isLoaded, watchInfo } = this.state;
-
-//     let selectedRates = timeRange(watchInfo, stTime, stpTime);
-//     console.log(watchInfo);
-//     console.log(selectedRates);
-    
-//     if (error) {
-//       return <React.Fragment>Error: {error.message}</React.Fragment>;
-//     } else if (!isLoaded) {
-//       return <React.Fragment>Loading...</React.Fragment>;
-//     } else {
-//       return (
-//         <React.Fragment>
-//           <h1>WatchInfo</h1>
-//             <h2>{Date()}</h2>
-//             <input id="start-time" name="start-time" type="time" placeholder='Start' required autoFocus></input>
-//             <input id="stop-time" name="stop-time" type="time" placeholder='Stop date (yyyy-mm-dd)' required></input>
-            
-//                     <ul>
-//             {selectedRates.map((element, index) => 
-//               <li key={index}>
-//                 <h3>{element.time}</h3>
-//                 <h3>{element.value}</h3>
-//               </li>
-//             )}
-            
-//           </ul>
-//         </React.Fragment>
-//       );
-//     }
-//   }
-// }
 WatchInfo.propTypes = {
   mainEventList: PropTypes.object,
   formVisibleOnPage: PropTypes.bool

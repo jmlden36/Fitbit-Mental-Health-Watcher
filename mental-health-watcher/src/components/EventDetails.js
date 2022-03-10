@@ -5,9 +5,6 @@ import * as d3 from 'd3';
 
 function EventDetail(props) {
   const { event, watchArr, onClickingDelete } = props;
-  console.log(watchArr);
-  console.log(event.startTime)
-  console.log(event.stopTime)
   
   function timeRange(objArr, stTime, stpTime) {
       let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt(stTime.toString().replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt(stpTime.toString().replace(":", "")));
@@ -15,8 +12,6 @@ function EventDetail(props) {
     }
 
     let selectedRates = timeRange(watchArr, event.startTime+":00", event.stopTime+":00");
-    console.log(event.startTime+":00")
-    console.log(selectedRates)
 
     //variables for the line chart
 
@@ -24,11 +19,6 @@ function EventDetail(props) {
       return e["value"];
     });
     //x axis 
-    const timeArr = watchArr.map(e => e.time)
-    console.log(timeArr)
-    //y axis
-    // const valArr = watchArr.map(e => e.value)
-    console.log(valArr)
 
     const [data] = useState(valArr)
     const svgRef = useRef();
