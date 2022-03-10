@@ -77,8 +77,12 @@ Mental Health Watcher is a React application that allows a user to connect to th
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 * [React](https://reactjs.org/)
+* [React-Redux](https://react-redux.js.org/)
+* [Firebase](https://firebase.google.com/?gclid=CjwKCAiAvaGRBhBlEiwAiY-yMHtpl0n10ERGEfaA5Wo8fY1H4kVlvYVfWTcq49WpqF2XCmeL5W3vghoCKpYQAvD_BwE&gclsrc=aw.ds)
+* [Firebase Authentication](https://firebase.google.com/docs/auth)
 * [webpack](https://webpack.js.org/)
 * [Fitbit web API](https://dev.fitbit.com/build/reference/web-api/)
+* [D3.js](https://d3js.org/)
 ___________________________
 
 
@@ -140,7 +144,12 @@ ___________________________
   
 
   #### Using the application
-  
+  1) Click the `Sign Up` button in the upper left corner and create an account with an email and password
+  2) After you create an account click `Sign In` and enter your account information
+  3) After you submit click `Home` and then you can start creating events with a start time and stop time that will show you your heart rate every minute between those times and will also generate a line graph of the data
+  4) To view an events details click on the event and you will be directed to the details page that holds all of the event heart rate data 
+  5) To delete an event click the `delete event` button on the event details page
+  6) When you are finished click `log out` and then click the log out button
 
 ### License
 
@@ -168,70 +177,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 ___________________________
-
-
-# Fitbit-Mental-Health-Watcher
-My capstone project for Epicodus.  An application using the Fitbit smart watch to record sensor data and present it to the user.  The user can create an account so that their data is password protected.  Ideally it will have a React front end,  and use javaScript fitbit web API calls to get the users fitbit sensor data on a set time interval.  If the user clicks a start and stop button they can retrieve the sensor data from that chunk of time and view it in a user friendly format.  The goal is to allow people the ability to have more options to be mindful of times that they didn't like their mental state and be able to look back at what their body was doing during that time.
-
-## PLEASE NOTE THAT I LIVE IN DENVER, CO IN THE MOUNTAIN TIME ZONE.  THIS MAKES MY TIME LOG APPEAR AN HOUR OFF TO FOLKS IN THE PACIFIC NORTHWEST
-
-### Research & Planning Log
-#### Friday, 02/18/2022
-
-* 6:30am-7am: spent 30 min writing capstone proposal
-_____________________________________________________
-#### Saturday, 02/19/2022
-
-* 6:30am-8am: spent 1.5 hours setting up a Fitbit developer account, setting up a Fitbit studio account, and exploring Fitbit.  I used Fitbit studio and the [getting started page](https://dev.fitbit.com/getting-started/#get-ready-) to create a test clock face that successfully connected to my watch.
-
-* 8am-9:15am: spent 1.25 hours using the fitbit studio documentation and  fitbit studio to create a watch app and export as well as a test project build with npx-fitbit in VS Code for testing.
-
-* 9:15am-9:45am: spent .5 hours watching 2 part video series on accessing the fitbit web API via postman
-
-* 9:45am-11:15am: spent 1.5 hours practicing creating an authorization token for my fitbit and exploring endpoints for my profile data in postman
-
-* 11:15am-12pm: spent .75 hours start reading the Fitbit Web API Developer Guide
-
-* 1pm-3pm: spent 2 hours continuing to read the Fitbit development documentation
-_____________________________________________________
-#### Thursday, 02/24/2022
-
-* 11:15-11:30: spent .25 hours during a coding break to update my capstone proposal and resubmit
-_____________________________________________________
-#### Friday, 02/25/2022 total 4.25
-
-* 7:30am-8am: spent .5 hours setting up a trello account and creating a trello board to organize my project goals and make a timeline
-
-* 9:45am-10:15am: spent .5 hours watching tutorial on how to do fitbit api requests with javascript
-
-* 9:45am-12pm: spent 1.25 hours following a tutorial creating a test React project to make API calls [test project](https://github.com/jmlden36/react-with-api)
-
-* 1:30pm-3:30pm: spent 2 hours finishing the React with api practice project [test project](https://github.com/jmlden36/react-with-api)
-
-______________________________________________________
-#### Saturday, 02/26/2022 
-
-* 10:30am-11:15am: spent .75 hours talking with my sister(psychologist) about what information would be useful and how it would be best displayed if someone wanted to show their mental healthcare professional
-_______________________________________________________
-#### Sunday, 02/27/2022 
-
-* 2:45am-3:15am: spent .5 hours working on code shown in commit log @3:20am
-
-* 3:15am-4am: spent .75 hours working on getting dynamic time ranges using dropdown time inputs
-________________________________________________________
-#### Friday, 03/4/2022 
-
-* 6:15am - 6:45am: spent .5 hours updating my trello board for this weekends work sessions
-________________________________________________________
-#### Sunday, 03/6/2022
-
-* 3am-3:45am: spent .75 hours re-obtaining fitbit authorization token because I accidentally let me original token lapse
-
-* 3pm-3:15pm: spent .25 hours updating trello board with progress and plans for the remainder of my work days left
-
-________________________________________________________
-#### Tuesday, 03/8/2022
-
-* 1:15pm - 1:45pm: spent .5 hours reading D3.js documentation and tutorials
-
-* 1:45pm - 3:30pm: spent 1.75 hours working through a youtube tutorial on data visualization with D3.js
