@@ -66,10 +66,14 @@ Mental Health Watcher is a React application that allows a user to connect to th
         <img src="./mental-health-watcher/src/img/Capstone Diagram.jpg">
     </a>
 
+## Screen Shot
+<a>
+        <img src="./mental-health-watcher/src/img/ScreenShot.jpg">
+    </a
 
 ### Known Bugs
 
-* There are no known bugs
+* You can only view your heart rate for the current day
 
 ### Built With
 * [Visual Studio Code](https://code.visualstudio.com/)
