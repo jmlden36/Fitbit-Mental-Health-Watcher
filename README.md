@@ -149,7 +149,8 @@ ___________________________
   3) After you submit click `Home` and then you can start creating events with a start time and stop time that will show you your heart rate every minute between those times and will also generate a line graph of the data
   4) To view an events details click on the event and you will be directed to the details page that holds all of the event heart rate data 
   5) To delete an event click the `delete event` button on the event details page
-  6) When you are finished click `log out` and then click the log out button
+  6) To update an event click the `update` button on the event details page
+  6) When you are finished click `log out` in the top left corner of the screen and then click the log out button
 
 ### License
 
