@@ -65,6 +65,7 @@ function EventDetail(props) {
   return (
     <React.Fragment>
       <button className="buttons" onClick={() => onClickingDelete(event.id) }>Delete Event</button>
+      <button className="buttons" onClick={ props.onClickingEdit}>Update your event details</button>
       <div className="detail">
         <h1>Event Detail</h1>
       </div>
@@ -103,7 +104,8 @@ function EventDetail(props) {
 
 EventDetail.propTypes = {
   event: PropTypes.object,
-  onClickingDelete: PropTypes.func
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 
 export default EventDetail;

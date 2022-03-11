@@ -1,6 +1,7 @@
 import React from 'react';
 import NewEventForm from './NewEventForm';
 import EventDetail from './EventDetails';
+import EditEventForm from './EditEventForm';
 import EventList from './EventList';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
@@ -74,11 +75,21 @@ class WatchInfo extends React.Component {
       this.setState({selectedEvent: firestoreEvent });
     });
   }
-  handleDeletingMemory = (id) => {
+  handleDeletingEvent = (id) => {
     this.props.firestore.delete({collection: 'events', doc: id});
     this.setState({selectedEvent: null});
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingEventInList =() => {
+    this.setState({
+      editing: false,
+      selectedEvent: null
+    })
+  }
   render() {
     const auth = this.props.firebase.auth();
     
@@ -100,12 +111,17 @@ class WatchInfo extends React.Component {
       if ((isLoaded(auth)) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;
       let buttonText = null;
-      if (this.state.selectedEvent != null) {
+      if( this.state.editing) {
+        currentlyVisibleState = <EditEventForm event = {this.state.selectedEvent} onEditEvent = {this.handleEditingEventInList} />
+        buttonText= "Return To List";
+      }
+      else if (this.state.selectedEvent != null) {
         currentlyVisibleState = 
         <EventDetail 
           watchArr = {this.state.watchInfo}
           event = {this.state.selectedEvent} 
-          onClickingDelete = {this.handleDeletingMemory}/>
+          onClickingDelete = {this.handleDeletingEvent}
+          onClickingEdit = {this.handleEditingEventInList} />
         buttonText = "Return to Event List";
       } else if (this.props.formVisibleOnPage) {
         currentlyVisibleState = <NewEventForm onNewEventCreation={this.handleAddingNewEventToList} />;
