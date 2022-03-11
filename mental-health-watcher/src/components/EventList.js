@@ -15,15 +15,15 @@ function EventList(props){
     return (
       <React.Fragment>
       <hr/>
-      {events.map((event) =>
+      {events.map((eventHR) =>
         <Event
           whenEventClicked = { props.onEventSelection }
-          date={event.date}
-          startTime={event.startTime}
-          stopTime={event.stopTime}
-          notes={event.notes}
-          id={event.id}
-          key={event.id}/>
+          date={eventHR.date}
+          startTime={eventHR.startTime}
+          stopTime={eventHR.stopTime}
+          notes={eventHR.notes}
+          id={eventHR.id}
+          key={eventHR.id}/>
       )}
     </React.Fragment>
   );

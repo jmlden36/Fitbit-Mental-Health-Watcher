@@ -15,7 +15,8 @@ class WatchInfo extends React.Component {
       selectedEvent: null,
       error: null,
       isLoaded: false,
-      watchInfo: []
+      watchInfo: [],
+      editing: false
     };
   }
 
@@ -64,13 +65,13 @@ class WatchInfo extends React.Component {
   }
 
   handleChangingSelectedEvent = (id) => {
-    this.props.firestore.get({collection: 'events', doc: id}).then((event) => {
+    this.props.firestore.get({collection: 'events', doc: id}).then((eventHR) => {
       const firestoreEvent = {
-        date: event.get("date"),
-        startTime: event.get("startTime"),
-        stopTime: event.get("stopTime"),
-        notes: event.get("notes"),
-        id: event.id
+        date: eventHR.get("date"),
+        startTime: eventHR.get("startTime"),
+        stopTime: eventHR.get("stopTime"),
+        notes: eventHR.get("notes"),
+        id: eventHR.id
       }
       this.setState({selectedEvent: firestoreEvent });
     });
@@ -112,16 +113,15 @@ class WatchInfo extends React.Component {
       let currentlyVisibleState = null;
       let buttonText = null;
       if( this.state.editing) {
-        currentlyVisibleState = <EditEventForm event = {this.state.selectedEvent} onEditEvent = {this.handleEditingEventInList} />
+        currentlyVisibleState = <EditEventForm eventHR = {this.state.selectedEvent} onEditEvent = {this.handleEditingEventInList} />
         buttonText= "Return To List";
-      }
-      else if (this.state.selectedEvent != null) {
+      } else if (this.state.selectedEvent != null) {
         currentlyVisibleState = 
         <EventDetail 
           watchArr = {this.state.watchInfo}
-          event = {this.state.selectedEvent} 
+          eventHR = {this.state.selectedEvent} 
           onClickingDelete = {this.handleDeletingEvent}
-          onClickingEdit = {this.handleEditingEventInList} />
+          onClickingEdit = {this.handleEditClick} />
         buttonText = "Return to Event List";
       } else if (this.props.formVisibleOnPage) {
         currentlyVisibleState = <NewEventForm onNewEventCreation={this.handleAddingNewEventToList} />;

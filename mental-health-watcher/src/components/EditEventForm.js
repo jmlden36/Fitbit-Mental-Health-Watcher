@@ -5,7 +5,7 @@ import { useFirestore } from 'react-redux-firebase';
 
 function EditEventForm (props) {
   const firestore = useFirestore();
-  const { event } = props;
+  const { eventHR } = props;
   function handleEditEventFormSubmission(event) {
     event.preventDefault();
     props.onEditEvent();
@@ -13,10 +13,9 @@ function EditEventForm (props) {
       date: event.target.date.value,
       startTime: event.target.startTime.value,
       stopTime: event.target.stopTime.value,
-      notes: event.target .notes.value,
-      id: event.id
+      notes: event.target .notes.value
     }
-    return firestore.update({collection: 'events', doc: event.id }, propertiesToUpdate)
+    return firestore.update({collection: 'events', doc: eventHR.id }, propertiesToUpdate)
   }
 
   return (

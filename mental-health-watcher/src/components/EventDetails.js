@@ -4,14 +4,14 @@ import WatchInfo from "./WatchInfo";
 import * as d3 from 'd3';
 
 function EventDetail(props) {
-  const { event, watchArr, onClickingDelete } = props;
+  const { eventHR, watchArr, onClickingDelete } = props;
   
   function timeRange(objArr, stTime, stpTime) {
       let filteredObjArr = objArr.filter(e => parseInt(e.time.replace(":", "")) >= parseInt(stTime.toString().replace(":", "")) && parseInt(e.time.replace(":", "")) <= parseInt(stpTime.toString().replace(":", "")));
       return filteredObjArr;
     }
 
-    let selectedRates = timeRange(watchArr, event.startTime+":00", event.stopTime+":00");
+    let selectedRates = timeRange(watchArr, eventHR.startTime+":00", eventHR.stopTime+":00");
 
     //variables for the line chart
 
@@ -64,19 +64,19 @@ function EventDetail(props) {
     }, [data]);
   return (
     <React.Fragment>
-      <button className="buttons" onClick={() => onClickingDelete(event.id) }>Delete Event</button>
-      <button className="buttons" onClick={ props.onClickingEdit}>Update your event details</button>
+      <button className="buttons" onClick={() => onClickingDelete(eventHR.id) }>Delete Event</button>
+      <button className="buttons" onClick={ props.onClickingEdit }>Update</button>
       <div className="detail">
         <h1>Event Detail</h1>
       </div>
       <div className="date">
-      <h3>{event.date}</h3>
+      <h3>{eventHR.date}</h3>
       </div>
       <div className="event">
-      <h3>From: {event.startTime} To: {event.stopTime}</h3>
+      <h3>From: {eventHR.startTime} To: {eventHR.stopTime}</h3>
       </div>
       <div className="notes">
-        <h3>{event.notes}</h3>
+        <h3>{eventHR.notes}</h3>
       </div>
       
       
@@ -103,7 +103,7 @@ function EventDetail(props) {
 }  
 
 EventDetail.propTypes = {
-  event: PropTypes.object,
+  eventHR: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func
 };
