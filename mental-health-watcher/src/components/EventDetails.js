@@ -22,7 +22,7 @@ function EventDetail(props) {
 
     const [data] = useState(valArr)
     const svgRef = useRef();
-
+    
     useEffect(() => {
       // setting up svg
       const w = 800;
