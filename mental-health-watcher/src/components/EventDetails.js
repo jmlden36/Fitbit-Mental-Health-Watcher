@@ -60,7 +60,7 @@ function EventDetail(props) {
         .join('path')
           .attr('d', d => generateScaledLine(d))
           .attr('fill', 'none')
-          .attr('stroke', 'black')
+          .attr('stroke', 'red')
     }, [data]);
   return (
     <React.Fragment>

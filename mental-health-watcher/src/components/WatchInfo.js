@@ -148,7 +148,6 @@ WatchInfo.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    // mainEventList: state.mainEventList,
     formVisibleOnPage: state.formVisibleOnPage
   }
 }
